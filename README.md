@@ -41,7 +41,10 @@ libjson-glib-dev
 
 ```bash
 # Run the pipeline
-gst-launch-1.0 -v rtspsrc location=rtsp://admin:password@192.168.250.100/Streaming/Channels/102 \
+gst-launch-1.0 -v \
+\
+\
+rtspsrc location=rtsp://admin:password@192.168.250.100/Streaming/Channels/102 \
 ! rtph265depay \
 ! h265parse \
 ! nvv4l2decoder \
