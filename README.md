@@ -51,3 +51,16 @@ rtspsrc location=rtsp://admin:password@192.168.250.100/Streaming/Channels/102 \
 ! nvvideoconvert \
 ! ximagesink
 ```
+
+
+HLS Stream Playback
+```bash
+gst-launch-1.0 -v filesrc location=/code/video/192.168.0.145/playlist.m3u8 \
+! hlsdemux \
+! tsdemux \
+! h265parse \
+! nvv4l2decoder \
+! nvvideoconvert \
+! autovideosink
+
+```
